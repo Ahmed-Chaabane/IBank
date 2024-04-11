@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
+from  tkinter import ttk
 from PIL import ImageTk, Image
+from prettytable import PrettyTable
 
 
 class Application:
@@ -119,7 +121,8 @@ class Application:
                 text="Rechercher",
                 width=10,
                 height=1,
-                command=lambda: self.rechercher_client(text_zone.get()),
+                command=lambda:
+                self.rechercher_client(text_zone.get()),
                 bg='#0078bd',
                 fg='#ffffff',
                 font=('Arial', 14, 'bold'),
@@ -146,18 +149,20 @@ class Application:
                     row_counter += 1
                     column_counter = 0
 
-                label = tk.Label(labels_frame, text=labels[i], font=('organetto bold', 12), bg='#dedede', width=15, anchor="w")
+                label = tk.Label(labels_frame, text=labels[i], font=('organetto bold', 12), bg='#dedede', width=15,
+                                 anchor="w")
                 label.grid(row=row_counter, column=column_counter, padx=5, pady=5)
 
                 text_zone = tk.Entry(labels_frame, font=('Arial', 14), width=30, state="disabled")
                 text_zone.grid(row=row_counter, column=column_counter + 1, padx=5, pady=5)
                 column_counter += 2
+
         elif texte == "Gestion des Comptes":
 
             search_frame = tk.Frame(self.frame_droite, bg='#dedede')
-            search_frame.pack(padx=50, pady=50)
+            search_frame.pack(padx=50, pady=50, anchor="w")
 
-            text_label = tk.Label(search_frame, text="Client", font=('Arial', 14), bg='#dedede')
+            text_label = tk.Label(search_frame, text="COMPTE :", font=('organetto bold', 16), bg='#dedede')
             text_label.grid(row=0, column=0, padx=5, pady=5)
 
             text_zone = tk.Entry(search_frame, font=('Arial', 14), width=30)
@@ -168,13 +173,105 @@ class Application:
                 text="Rechercher",
                 width=10,
                 height=1,
-                command=lambda: self.rechercher_client(text_zone.get()),
+                command=lambda:
+                self.rechercher_client(text_zone.get()),
                 bg='#0078bd',
                 fg='#ffffff',
                 font=('Arial', 14, 'bold'),
                 relief='raised'
             )
             search_button.grid(row=0, column=2, padx=5, pady=5)
+
+            labels_frame = tk.Frame(self.frame_droite, bg='#dedede')
+            labels_frame.pack(padx=50, pady=10)
+
+            labels = [
+                "CODE CLIENT :", "NOM CLIENT :", "PRENOM CLIENT :",
+                "Date d'ouverture :", "DATE DE NAISSANCE :", "LIEU DE NAISSANCE :",
+                "C.I.N :", "Date de delivrance :", "Lieu de delivrance :",
+                "ADRESSE CLIENT :", "EMAIL CLIENT :", "TELEPHONE CLIENT :",
+                "CIVILITÉ :", "SEXE :", "commercial :"
+            ]
+
+            row_counter = 0
+            column_counter = 0
+
+            for i in range(15):
+                if i % 3 == 0:
+                    row_counter += 1
+                    column_counter = 0
+
+                label = tk.Label(labels_frame, text=labels[i], font=('organetto bold', 12), bg='#dedede', width=15,
+                                 anchor="w")
+                label.grid(row=row_counter, column=column_counter, padx=5, pady=5)
+
+                text_zone = tk.Entry(labels_frame, font=('Arial', 14), width=30, state="disabled")
+                text_zone.grid(row=row_counter, column=column_counter + 1, padx=5, pady=5)
+                column_counter += 2
+
+        elif texte == "Gestion des Opérations":
+            search_frame = tk.Frame(self.frame_droite, bg='#dedede')
+            search_frame.pack(padx=50, pady=50, anchor="w")
+
+            text_label = tk.Label(search_frame, text="Client :", font=('organetto bold', 16), bg='#dedede')
+            text_label.grid(row=0, column=0, padx=5, pady=5)
+
+            text_zone = tk.Entry(search_frame, font=('Arial', 14), width=30)
+            text_zone.grid(row=0, column=1, padx=5, pady=5)
+
+            search_button = tk.Button(
+                search_frame,
+                text="Rechercher",
+                width=10,
+                height=1,
+                command=lambda:
+                self.rechercher_client(text_zone.get()),
+                bg='#0078bd',
+                fg='#ffffff',
+                font=('Arial', 14, 'bold'),
+                relief='raised'
+            )
+            search_button.grid(row=0, column=2, padx=5, pady=5)
+
+            labels_frame = tk.Frame(self.frame_droite, bg='#dedede')
+            labels_frame.pack(padx=50, pady=10)
+
+            labels = [
+                "CODE CLIENT :", "NOM CLIENT :", "PRENOM CLIENT :",
+                "Date d'ouverture :", "DATE DE NAISSANCE :", "LIEU DE NAISSANCE :",
+                "C.I.N :", "Date de delivrance :", "Lieu de delivrance :",
+                "ADRESSE CLIENT :", "EMAIL CLIENT :", "TELEPHONE CLIENT :",
+                "CIVILITÉ :", "SEXE :", "commercial :"
+            ]
+
+            row_counter = 0
+            column_counter = 0
+
+            for i in range(15):
+                if i % 3 == 0:
+                    row_counter += 1
+                    column_counter = 0
+
+                label = tk.Label(labels_frame, text=labels[i], font=('organetto bold', 12), bg='#dedede', width=15,
+                                 anchor="w")
+                label.grid(row=row_counter, column=column_counter, padx=5, pady=5)
+
+                text_zone = tk.Entry(labels_frame, font=('Arial', 14), width=30, state="disabled")
+                text_zone.grid(row=row_counter, column=column_counter + 1, padx=5, pady=5)
+                column_counter += 2
+
+        elif texte == "Événements":
+
+            table = PrettyTable()
+            table.field_names = ["ID EVT", "LIB EVT", "DAT_EVT", "TYP_EVT"]
+
+            # Add 30 rows to the table
+            for i in range(15):
+                table.add_row(["Row {}".format(i + 1), "Vaaaaaaal 1", "Vaaaaaaal 2", "Vaaaaaaal 3"])
+
+            # Create a Label widget to display the table
+            table_label = tk.Label(self.frame_droite, text=table.get_string(), font=('Arial', 14), width=60, height=30, bg='#dedede')
+            table_label.pack(padx=50, pady=50)
 
     def quitter_application(self):
         if messagebox.askokcancel("Quitter", "Êtes-vous sûr de vouloir quitter?"):

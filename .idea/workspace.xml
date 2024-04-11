@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="142016c6-e5e7-4d99-b3f3-57b7dd16bcb0" name="Changes" comment="ibank 11-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +331,8 @@
       <workItem from="1712606710653" duration="12845000" />
       <workItem from="1712689589814" duration="5748000" />
       <workItem from="1712707328360" duration="10904000" />
-      <workItem from="1712763081281" duration="7864000" />
+      <workItem from="1712763081281" duration="10554000" />
+      <workItem from="1712877702473" duration="394000" />
     </task>
     <task id="LOCAL-00001" summary="ibank">
       <option name="closed" value="true" />
@@ -358,7 +358,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712857274806</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ibank 11-1">
+      <option name="closed" value="true" />
+      <created>1712858482162</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712858482162</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ibank 11-1">
+      <option name="closed" value="true" />
+      <created>1712861595279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712861595279</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +395,6 @@
     <SUITE FILE_PATH="coverage/IBank$SignIn.coverage" NAME="SignIn Coverage Results" MODIFIED="1708549042164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/IBank$SignIn__1_.coverage" NAME="SignIn (1) Coverage Results" MODIFIED="1712623701299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IBank$LoginPage.coverage" NAME="LoginPage Coverage Results" MODIFIED="1708096336328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv" />
-    <SUITE FILE_PATH="coverage/IBank$Menu__1_.coverage" NAME="Menu (1) Coverage Results" MODIFIED="1712857247661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IBank$Menu__1_.coverage" NAME="Menu (1) Coverage Results" MODIFIED="1712860525605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
