@@ -43,7 +43,7 @@ class Application:
 
         self.charger_image_arriere_plan_gauche(frame_conteneur)
 
-        logo_image = Image.open("images\\ibank.png")
+        logo_image = Image.open("../images/ibank.png")
         logo_image = logo_image.resize((360, 90))
         logo_photo = ImageTk.PhotoImage(logo_image)
         logo_label = tk.Label(frame_conteneur, image=logo_photo, bg='#fbfbfd')
@@ -80,7 +80,7 @@ class Application:
 
     def charger_image_arriere_plan_gauche(self, frame_conteneur):
         try:
-            self.bg_frame = Image.open("images/background.png")
+            self.bg_frame = Image.open("../images/background.png")
             # Rotate the image to display in portrait mode
             self.bg_frame = self.bg_frame.transpose(Image.ROTATE_90)
             photo = ImageTk.PhotoImage(self.bg_frame)

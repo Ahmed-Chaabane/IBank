@@ -16,7 +16,7 @@ class LoginPage:
         self.window.title('Login ibank')
 
         # Background Image
-        self.bg_frame = Image.open("images/bg_login.png")
+        self.bg_frame = Image.open("../images/bg_login.png")
         photo = ImageTk.PhotoImage(self.bg_frame)
         self.bg_panel = Label(self.window, image=photo)
         self.bg_panel.image = photo
@@ -27,14 +27,14 @@ class LoginPage:
         self.lgn_frame.place(relx=0.5, rely=0.5, anchor=CENTER)  # Center the frame
 
         # Left Side Image
-        self.side_image = Image.open('images\\vector.png')
+        self.side_image = Image.open('../images/vector.png')
         photo = ImageTk.PhotoImage(self.side_image)
         self.side_image_label = Label(self.lgn_frame, image=photo, bg='#fbfbfd')
         self.side_image_label.image = photo
         self.side_image_label.place(x=5, y=50)
 
         # SignIn Image
-        self.sign_in_image = Image.open('images/login_sign.png')
+        self.sign_in_image = Image.open('../images/login_sign.png')
         photo = ImageTk.PhotoImage(self.sign_in_image)
         self.sign_in_image_label = Label(self.lgn_frame, image=photo, bg='#fbfbfd')
         self.sign_in_image_label.image = photo
@@ -52,7 +52,7 @@ class LoginPage:
         self.username_line = Canvas(self.lgn_frame, width=300, height=2.0, bg="#bdb9b1", highlightthickness=0)
         self.username_line.place(x=550, y=359)
 
-        self.username_icon = Image.open('images\\username_icon.png')
+        self.username_icon = Image.open('../images/username_icon.png')
         photo = ImageTk.PhotoImage(self.username_icon)
         self.username_icon_label = Label(self.lgn_frame, image=photo, bg='#fbfbfd')
         self.username_icon_label.image = photo
@@ -70,7 +70,7 @@ class LoginPage:
         self.password_line = Canvas(self.lgn_frame, width=300, height=2.0, bg="#bdb9b1", highlightthickness=0)
         self.password_line.place(x=550, y=440)
 
-        self.password_icon = Image.open('images\\password_icon.png')
+        self.password_icon = Image.open('../images/password_icon.png')
         photo = ImageTk.PhotoImage(self.password_icon)
         self.password_icon_label = Label(self.lgn_frame, image=photo, bg='#fbfbfd')
         self.password_icon_label.image = photo
