@@ -5,7 +5,7 @@ class Database:
 
     def __init__(self):
         """
-        Constructor of the class
+        Constructeur de la classe
         """
         self.username = "bourse"
         self.password = "admin"
@@ -14,18 +14,18 @@ class Database:
         self.service_name = "orcl"
 
         try:
-            print("Connecting to the Oracle database...")
+            print("Connexion à la base de données Oracle...")
             conn_str = f"{self.username}/{self.password}@{self.host}:{self.port}/{self.service_name}"
             self.connect = cx_Oracle.connect(conn_str)
-            print("Connection with Oracle database established successfully.")
+            print("Connexion à la base de données Oracle établie avec succès.")
         except cx_Oracle.DatabaseError as e:
-            print("Database connection failed!")
+            print("Échec de la connexion à la base de données!")
             print(e)
 
     @staticmethod
     def get_instance():
         """
-        Static method to get the database connection instance
+        Méthode statique pour obtenir l'instance de connexion à la base de données
         """
         if not Database.connect:
             Database.connect = Database()
@@ -33,28 +33,28 @@ class Database:
 
     def connect_to_database(self):
         """
-        Method to connect to the database
+        Méthode pour se connecter à la base de données
         """
         if self.connect:
-            print("Already connected to the database.")
+            print("Déjà connecté à la base de données.")
         else:
             try:
                 self.connect = cx_Oracle.connect(f"{self.username}/{self.password}@{self.host}:{self.port}/{self.service_name}")
-                print("Connection with Oracle database established successfully.")
+                print("Connexion à la base de données Oracle établie avec succès.")
             except cx_Oracle.DatabaseError as e:
-                print("Database connection failed!")
+                print("Échec de la connexion à la base de données!")
                 print(e)
 
     def disconnect(self):
         """
-        Method to disconnect from the database
+        Méthode pour se déconnecter de la base de données
         """
         if self.connect:
             self.connect.close()
             self.connect = None
-            print("Disconnected from the Oracle database.")
+            print("Déconnexion de la base de données Oracle.")
         else:
-            print("Not connected to the database.")
+            print("Pas connecté à la base de données.")
 
     def authenticate_user(self, username, password):
         cursor = self.connect.cursor()
