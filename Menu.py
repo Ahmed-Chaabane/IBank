@@ -97,7 +97,6 @@ class Application:
         self.frame.config(width=largeur_frame, height=hauteur_frame)
 
     def afficher_frame(self, texte):
-
         for widget in self.frame_droite.winfo_children():
             widget.destroy()
 
@@ -107,10 +106,13 @@ class Application:
         if texte == "Gestion des Clients":
 
             search_frame = tk.Frame(self.frame_droite, bg='#dedede')
-            search_frame.pack(padx=50, pady=50)
+            search_frame.pack(padx=50, pady=50, anchor="w")
 
-            text_zone = tk.Entry(search_frame, font=('Arial', 14))
-            text_zone.pack(side="left")
+            text_label = tk.Label(search_frame, text="Client :", font=('organetto bold', 16), bg='#dedede')
+            text_label.grid(row=0, column=0, padx=5, pady=5)
+
+            text_zone = tk.Entry(search_frame, font=('Arial', 14), width=30)
+            text_zone.grid(row=0, column=1, padx=5, pady=5)
 
             search_button = tk.Button(
                 search_frame,
@@ -123,35 +125,43 @@ class Application:
                 font=('Arial', 14, 'bold'),
                 relief='raised'
             )
-            search_button.pack(side="left", padx=(10, 0))
+            search_button.grid(row=0, column=2, padx=5, pady=5)
 
             labels_frame = tk.Frame(self.frame_droite, bg='#dedede')
             labels_frame.pack(padx=50, pady=10)
 
             labels = [
-                "NOM CLIENT", "PRENOM CLIENT","PRENOM CLIENT", "NAI_CLI", "ADRESSE CLIENT",
-                "EMAIL CLIENT", "TELEPHONE CLIENT", "CIV_CLI", "DAT_NAI_CLI", "LIE_NAI_CLI",
-                "IDE_CLI", "DAT_IDE_CLI", "LIE_IDE_CLI", "SEXE", "COM_CLI"
+                "CODE CLIENT :", "NOM CLIENT :", "PRENOM CLIENT :",
+                "Date d'ouverture :", "DATE DE NAISSANCE :", "LIEU DE NAISSANCE :",
+                "C.I.N :", "Date de delivrance :", "Lieu de delivrance :",
+                "ADRESSE CLIENT :", "EMAIL CLIENT :", "TELEPHONE CLIENT :",
+                "CIVILITÉ :", "SEXE :", "commercial :"
             ]
+
+            row_counter = 0
+            column_counter = 0
 
             for i in range(15):
                 if i % 3 == 0:
-                    row_frame = tk.Frame(labels_frame, bg='#dedede')
-                    row_frame.pack(padx=10, pady=5)
+                    row_counter += 1
+                    column_counter = 0
 
-                label = tk.Label(row_frame, text=labels[i], font=('Arial', 14), bg='#dedede')
-                label.pack(side="left", padx=10, pady=5)
+                label = tk.Label(labels_frame, text=labels[i], font=('organetto bold', 12), bg='#dedede', width=15, anchor="w")
+                label.grid(row=row_counter, column=column_counter, padx=5, pady=5)
 
-                text_zone = tk.Entry(row_frame, font=('Arial', 14))
-                text_zone.pack(side="left", padx=10, pady=5)
-
+                text_zone = tk.Entry(labels_frame, font=('Arial', 14), width=30, state="disabled")
+                text_zone.grid(row=row_counter, column=column_counter + 1, padx=5, pady=5)
+                column_counter += 2
         elif texte == "Gestion des Comptes":
 
             search_frame = tk.Frame(self.frame_droite, bg='#dedede')
             search_frame.pack(padx=50, pady=50)
 
-            text_zone = tk.Entry(search_frame, font=('Arial', 14))
-            text_zone.pack(side="left")
+            text_label = tk.Label(search_frame, text="Client", font=('Arial', 14), bg='#dedede')
+            text_label.grid(row=0, column=0, padx=5, pady=5)
+
+            text_zone = tk.Entry(search_frame, font=('Arial', 14), width=30)
+            text_zone.grid(row=0, column=1, padx=5, pady=5)
 
             search_button = tk.Button(
                 search_frame,
@@ -164,7 +174,7 @@ class Application:
                 font=('Arial', 14, 'bold'),
                 relief='raised'
             )
-            search_button.pack(side="left", padx=(10, 0))
+            search_button.grid(row=0, column=2, padx=5, pady=5)
 
     def quitter_application(self):
         if messagebox.askokcancel("Quitter", "Êtes-vous sûr de vouloir quitter?"):
